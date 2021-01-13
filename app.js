@@ -1,27 +1,22 @@
 import { compareNumbers } from './utils.js';
 
-// import functions and grab DOM elements
+
 const guessesLeft = document.getElementById('guesses-left');
 const userGuess = document.getElementById('user-guess');
 const guessButton = document.getElementById('guess-button');
 const guessResult = document.getElementById('guess-result');
 
-// initialize state
 
 let correctNumber = Number(Math.ceil(Math.random() * 20));
 console.log(correctNumber);
-
 let numberOfGuesses = 4;
 
-
-// set event listeners to update state and DOM
 
 guessButton.addEventListener('click', () => {
     const userNum = Number(userGuess.value);
     --numberOfGuesses;
     guessesLeft.textContent = numberOfGuesses;
-    console.log(userNum, `userNum`);
-    console.log(compareNumbers(userNum, correctNumber));
+
 
     if (compareNumbers(userNum, correctNumber) === 0) {
         guessResult.textContent = `You got it!`;
@@ -30,8 +25,6 @@ guessButton.addEventListener('click', () => {
     } else if (compareNumbers(userNum, correctNumber) === 1) {
         guessResult.textContent = `Too high!`;
     }
-
-
 
 
     if (numberOfGuesses === 0) {
