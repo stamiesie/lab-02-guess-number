@@ -1,9 +1,9 @@
-export function compareNumbers(userNumber, correctNumber, guessResult) {
+export function compareNumbers(userNumber, correctNumber) {
     if (userNumber === correctNumber) {
-        guessResult.textContent = `You guessed correct!`;
+        return 0;
     } else if (userNumber < correctNumber) {
-        guessResult.textContent = `Higher!`;
+        return -1;
     } else if (userNumber > correctNumber) {
-        guessResult.textContent = `Lower!`;
+        return 1;
     }
 }
